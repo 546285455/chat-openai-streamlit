@@ -25,7 +25,10 @@ def num_tokens_from_messages(messages, model="gpt-3.5-turbo-0613"):
             "gpt-4-0613",
             "gpt-4-32k-0613",
             "gpt-4",
-            "gpt-3.5-turbo"
+            "gpt-3.5-turbo",
+            "SparkDesk-v3.5",
+            "kimi",
+            "claude-3-opus"
         }:
         tokens_per_message = 3
         tokens_per_name = 1

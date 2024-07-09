@@ -15,8 +15,8 @@ def get_openai_client(url, api_key):
     return client
 
 def vision_page():
-    st.title("GPT-4 with Vision")
-    st.caption("use GPT-4 to understand images")
+    st.title("皮肤检测AI")
+    st.caption("上传你的素颜高清照片，检测你的皮肤得分")
 
     # 初始化参数
     api_key = (
@@ -25,7 +25,7 @@ def vision_page():
         else None
     )
     if api_key is None:
-        st.error("Please enter your API key in the home.")
+        st.error("请先填写API Key")
         st.stop()
 
     if "base_url" in st.session_state:
@@ -60,7 +60,7 @@ def vision_page():
                     base64_image = base64.b64encode(bytes_data).decode("utf-8")
                     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
                     payload = {
-                        "model": "gpt-4-vision-preview",
+                        "model": "gpt-4o",
                         "messages": [
                             {
                                 "role": "user",
